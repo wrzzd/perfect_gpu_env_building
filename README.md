@@ -13,7 +13,7 @@
 ## Close BIOS secure root
 	necessary
 
-## 禁用 nouveau:
+## 禁用 nouveau
 	sudo vim /etc/modprobe.d/blacklist.conf
 	
 		blacklist nouveau
@@ -34,4 +34,11 @@
 		sudo systemctl set-default multi-user.target
 		sudo reboot
 
+## Install driver
+	1. 删掉之前的驱动： sudo apt-get remove --purge nvidia*
+	2. 更新安装一些必要的库： sudo apt-get update 
+				  sudo apt-get install dkms build-essential linux-headers-generic
+	3. 安装驱动： sudo chmod u+x NVIDIA-Linux-x86_64***.run
+		      sudo ./NVIDIA-Linux-***.run -no-opengl-files
 
+## Install cuda
