@@ -74,3 +74,8 @@
 ## Tips
 	* 有些显卡型号比较新，可能一开始运行 lspci | grep VGA 不能得到准确的显卡名称，此时可能需要根据硬件判断显卡型号；
 	  或者尝试命令 sudo update-pciids 更新显卡id，即可看到显卡名称；
+	* NVIDIA-SMI has failed because it couldn’t communicate with the NVIDIA driver
+		try: sudo modprobe nvidia
+		try: sudo apt-get install dkms
+		     sudo dkms install -m nvidia -v 418.56
+		
